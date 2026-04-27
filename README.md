@@ -1,4 +1,4 @@
-# Linux-Hardening-Toolkit 🛡️
+# Linux-Hardening-Toolkit 
 
 Automated Bash scripts to secure Linux servers based on CIS Benchmarks Level 1. This toolkit is part of my journey into Cybersecurity automation.
 
