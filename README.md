@@ -22,3 +22,24 @@ chmod +x harden-centos.sh
 
 # 4. Run with root privileges
 sudo ./harden-centos.sh
+
+## Features
+
+- ✅ **Defensive Scripting**: Pre-flight root check and fail-fast error handling with `set -euo pipefail`
+- ✅ **Configuration Safety**: Automated `.bak` backups before modifying system files
+- ✅ **Idempotent**: Safe to run multiple times without unintended side effects
+- ✅ **CIS Level 1**: Implements critical security controls from CIS Benchmark
+
+## Troubleshooting CentOS 8 EOL
+
+CentOS 8 reached End-of-Life. If `yum update` fails, switch repos to `vault.centos.org`:
+```bash
+sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+
+## Contributors
+
+This project exists thanks to all the people who contribute.
+
+- **Hajar Kandri** - *Project Creator & Maintainer* - Initial CIS Level 1 implementation and project architecture
+- **@ou-bash** - *Contributor* - Major refactor: defensive scripting, idempotency, and automated configuration backups
